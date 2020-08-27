@@ -1,0 +1,26 @@
+after installing laravel and creating a project, open xampp/apache/conf/extra/httpd-vhosts.conf and add this code:
+<VirtualHost *:80>
+    
+    DocumentRoot "C:/xampp/htdocs"(path)
+    ServerName localhost
+</VirtualHost>
+
+
+<VirtualHost *:80>
+    
+    DocumentRoot "C:/xampp/htdocs/Aliens/public"(path)
+    ServerName aliens.test (keep it .test otherwise .dev will face error)
+</VirtualHost>
+
+also open windows/system32/drivers/etc/hosts and add:
+127.0.0.1       localhost
+127.0.0.1       aliens.test
+
+for bootstrap css
+install node.js
+Make Sure in /resources/js/app.js there is a code : require('./bootstrap');
+2. run in your terminal -> composer require laravel/ui
+3 run in your terminal -> php artisan ui bootstrap
+4. terminal -> npm install 
+5. terminal -> npm run dev
+public\css\app.css should now be present and you could now use bootstrap
